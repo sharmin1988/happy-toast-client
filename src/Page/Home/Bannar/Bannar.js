@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Bannar = () => {
     return (
-        <header className="bg-white dark:bg-gray-900">
+        <header className="bg-white ">
             <div className="container px-6 py-12 mx-auto">
                 <div className="items-center lg:flex">
                     <div className="w-full lg:w-1/2">

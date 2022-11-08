@@ -20,10 +20,10 @@ const ServiceCard = ({ service }) => {
                 {description.length > 100 ? description.slice(0, 100) + '...' : description}
                 </p>
                 <p className="inline-flex items-center font-semibold ">
-                    Course Fee: ${price}
+                    Price: ${price}
                 </p>
                 <br />
-                <Link to='/services'>
+                <Link to={`/services/${_id}`}>
                     <button className="w-full tracking-wider px-6 font-semibold py-2.5 mt-6 text-sm text-white  bg-orange-600 rounded-md lg:w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">Details</button>
                 </Link>
             </div>

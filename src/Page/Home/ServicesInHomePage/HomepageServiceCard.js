@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomepageServiceCard = ({ service }) => {
-    const { title, description, image, price } = service
+    const {_id, title, description, image, price } = service
     return (
         <div>
             <div className="flex w-full">
@@ -16,9 +16,9 @@ const HomepageServiceCard = ({ service }) => {
                         >{description.length > 100 ? description.slice(0, 100) + '...' : description}
                         </p>
                         <p className="mt-4 text-base font-normal text-gray-500 leading-relax"
-                        >Course Fee: ${price}
+                        >Price: ${price}
                         </p>
-                        <Link to='/services'><button className="w-full tracking-wider px-4 font-semibold py-2.5 mt-6 text-sm text-white transition-colors duration-300 transform bg-orange-600 rounded-md  hover:bg-purple-500 focus:outline-none focus:bg-purple-500">Details</button></Link>
+                        <Link to={`/services/${_id}`}><button className="w-full tracking-wider px-4 font-semibold py-2.5 mt-6 text-sm text-white transition-colors duration-300 transform bg-orange-600 rounded-md  hover:bg-purple-500 focus:outline-none focus:bg-purple-500">Details</button></Link>
                     </div>
                 </div>
             </div>
