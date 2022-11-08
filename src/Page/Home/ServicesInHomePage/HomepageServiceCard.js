@@ -13,12 +13,12 @@ const HomepageServiceCard = ({ service }) => {
                             <span className="">{title}</span>
                         </h4>
                         <p className="mt-4 text-base font-normal text-gray-500 leading-relax"
-                        >Description: ${description.length > 100 ? description.slice(0, 100) + '...' : description}
+                        >{description.length > 100 ? description.slice(0, 100) + '...' : description}
                         </p>
                         <p className="mt-4 text-base font-normal text-gray-500 leading-relax"
                         >Course Fee: ${price}
                         </p>
-                        <Link to='/services'><button className="w-full tracking-wider px-4 font-semibold py-2.5 mt-6 text-sm text-white transition-colors duration-300 transform bg-orange-600 rounded-md lg:w-auto hover:bg-purple-500 focus:outline-none focus:bg-purple-500">More details</button></Link>
+                        <Link to='/services'><button className="w-full tracking-wider px-4 font-semibold py-2.5 mt-6 text-sm text-white transition-colors duration-300 transform bg-orange-600 rounded-md  hover:bg-purple-500 focus:outline-none focus:bg-purple-500">Details</button></Link>
                     </div>
                 </div>
             </div>

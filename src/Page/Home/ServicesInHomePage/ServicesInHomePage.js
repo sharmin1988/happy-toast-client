@@ -6,18 +6,17 @@ const ServicesInHomePage = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/servicesHome')
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setServices(data)
             })
     })
 
     return (
-        <section class="my-4 container px-6 py-10 mx-auto">
+        <section className="my-4 container px-6 py-10 mx-auto">
             <h2 className='text-3xl text-center font-bold mb-6'>My services</h2>
-            <div class="flex flex-wrap mx-auto md:flex-nowrap w-3/4">
+            <div className="flex flex-wrap mx-auto md:flex-nowrap w-3/4">
                 {
                     services.map(service => <HomepageServiceCard
                         key={service._id}
