@@ -1,0 +1,66 @@
+[
+    {
+        "title": "Cake time !!",
+        "price": 15,
+        "description": "This course is designed for anyone who wants to perfect the taste and appearance of their cakes. It's packed with information that you'll find useful whether you’re a complete beginner or you’ve been baking and decorating cakes for a while but want to improve the basic foundation of your cake. In ten modules this course covers from start to finish how to mix, bake, assemble, fill, frost, decorate, store, transport and serve a cake. You'll learn which tools and materials you'll need and how to use them for various techniques. You'll also find several recipes in the course for cakes, fillings and frostings. The course focuses on the tiny details, including all of the basics as well as more advanced tips to help you as you continue on your baking and cake decorating journey. With close-up video and simple, step by step instructions, you'll find each technique broken down into easy-to-follow steps.",
+
+        "image": "https://img.freepik.com/free-photo/front-view-sweet-chocolate-cake_23-2148834059.jpg?w=900&t=st=1667842901~exp=1667843501~hmac=e97909846f6735bd5c4e4130505b94cddf5c20c9e18bade6c6fb9a4a446ceb03",
+        "rating": {
+          "rate": 5.9,
+          "count": 120
+        }
+      },
+    {
+        "title": "Big Big... Burgers",
+        "price": 10,
+        "description": "This course is addressed to all those who don't want to wait until they get to their favourite burger place and would like to create that delicious burger in the comfort of their own kitchen. You'll find a comprehensive collection of methods and proposals of ingredients that will teach you how to prepare and cook the entire mise-en-place for your own burgers.",
+
+        "image": "https://img.freepik.com/free-photo/big-sandwich-hamburger-burger-with-beef-red-onion-tomato-fried-bacon_2829-5398.jpg?w=740&t=st=1667881823~exp=1667882423~hmac=54666f0aa2935bd316fbe1e765175fa34e8524cd2f6de6324668abcd90eab247",
+        "rating": {
+          "rate": 3.4,
+          "count": 120
+        }
+      },
+    {
+        "title": "Greeny Salads",
+        "price": 4.5,
+        "description": "Eating and cooking have always been very important issues for human beings. As a result, they want to have better standards in their lives by eating better and healthier foods. At the same time these days, people are seriously busy with their lives and they do not have enough time for cooking and for making salads. In this course I have been intended and determined to teach you two salads which are healthy and they do not need that much time for preparing. As well as the salads I have taught how to make special and extra sauce which I guess would be very helpful for your busy days and for your parties.In the first section, you will see a salad with a sauce, and in the second section you will see another salad plus sauce. then, the next section , there is another extra sauce which is my favorite. Finally, we have a real healthy Salad with contains bean.I could say the salads are delicious. I guess the sauce I have taught in my course could be served with another salad as well that you could do it yourself.Finally, I hope you enjoy this course and the taste of salads.",
+
+        "image": "https://img.freepik.com/free-photo/tuna-fish-salad-with-lettuce-cherry-tomatoes-avocado-red-onions-healthy-food-french-cuisine_2829-20268.jpg?w=740&t=st=1667880389~exp=1667880989~hmac=713ef7790203188cbf3ecaed9a4847391f9adb2b7360fbb9475e787d43bbc69d",
+        "rating": {
+          "rate": 4.8,
+          "count": 120
+        }
+      },
+    {
+        "title": "Crunchy Chicken Fry",
+        "price": 11.9,
+        "description": "In this online cooking course, you’ll learn three different styles of fried chicken, including Korean fried chicken,  Hot fried chicken, and Honey lemon fried chicken. You will discover what these variations have in common, including necessary equipment, what to do with leftover frying oil, and how to build flavor in the chicken itself. I witt also share in-depth, step-by-step videos that cover how to cut up a whole chicken and how to deep fry. Also teach you important safety tips when dealing with hot oil in your home kitchen. Finally, put these methods to work in three delicious fried chicken recipes.",
+        "image": "https://img.freepik.com/free-photo/crispy-fried-chicken-plate-with-salad-carrot_1150-20212.jpg?w=740&t=st=1667843584~exp=1667844184~hmac=408a7f83430316f63cee4adfcb1d5d71419d11ab80ebbd51194189a59227b8a8",
+        "rating": {
+          "rate": 4.5,
+          "count": 120
+        }
+      },
+    {
+        "title": "Coool...Ice creams",
+        "price": 8.6,
+        "description": "This ice-cream course is intended for professionals, foodies, or just ice-cream lovers who want to learn the technique behind a good ice-cream, as well as the potential to create a different, natural type of ice-cream. I will share three premium ice cream  recipes that go beyond the classics, and through which I will share my philosophy. All the recipes will prepare each one step by step, explaining the ingredients necessary for a perfect ice-cream.",
+        "image": "https://img.freepik.com/free-photo/delicious-ice-cream_144627-19512.jpg?w=740&t=st=1667842618~exp=1667843218~hmac=ae13da19096e726cf2ba2bfbe9c0aebdff10826fee55d058a29cc273c4d4c5ea",
+        "rating": {
+          "rate": 4.5,
+          "count": 120
+        }
+      },
+
+    {
+        "title": "Cheeseee... Pizza",
+        "price": 10.6,
+        "description": "Be it any occasion, we all love to eat pizza at home. But, what goes behind making this delicious dish? Well, learn all about making a delicious pizza at home with this easy recipe that will take you through detailed steps some tips that will guide you in preparing a Pizza at home.",
+        "image": "https://img.freepik.com/free-photo/mix-pizza-chicken-tomato-bell-pepper-olives-mushroom-side-view_141793-3167.jpg?w=740&t=st=1667844416~exp=1667845016~hmac=6afec380eca2bfb0461b2cc180bca21c1cccfb55249f7de51b3ae5487da344e5",
+        "rating": {
+          "rate": 4.9,
+          "count": 120
+        }
+      }
+]
