@@ -7,7 +7,7 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const {user, logOut} = useContext(AuthContext) 
+    const { user, logOut } = useContext(AuthContext)
     // console.log(user)
 
     const handleLogOut = () => {
@@ -23,13 +23,13 @@ const Header = () => {
                     <Link to='/' className="inline-flex items-center mr-8">
                         <img className='h-10' src={logo} alt="" />
                         <span className="ml-2 text-xl font-bold tracking-wide text-orange-500 ">
-                           Happy Toast
+                            Happy Toast
                         </span>
                     </Link>
                     <ul className=" items-center hidden space-x-8 lg:flex">
                         <li>
                             <Link to='/services' className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-orange-500">
-                               Services
+                                Services
                             </Link>
                         </li>
                         <li>
@@ -42,7 +42,7 @@ const Header = () => {
                                 Blog
                             </Link>
                         </li>
-                        
+
                     </ul>
                 </div>
                 <ul className="items-center hidden space-x-8 lg:flex">
@@ -51,13 +51,17 @@ const Header = () => {
                         user?.uid ?
                             <>
                                 <li>
-                                    {/* <div className="tooltip tooltip-bottom" data-tip={user.displayName}>
-                                        <Link to='/login' >
-                                            <img alt="" className="w-10 h-10 tooltip border bg-yellow-700 rounded-full" src={user?.photoURL} />
-                                        </Link>
-                                    </div> */}
-
+                                    <Link to='/myReviews' className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-orange-500">
+                                        My Reviews
+                                    </Link>
                                 </li>
+
+                                <li>
+                                    <Link to='/addService' className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-orange-500">
+                                        Add Service
+                                    </Link>
+                                </li>
+
                                 <li>
                                     <button>
                                         <Link onClick={handleLogOut} to='/' className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-orange-600 hover:bg-purple-600 focus:shadow-outline focus:outline-none">
@@ -75,7 +79,7 @@ const Header = () => {
                                 </li>
                                 <li>
                                     <Link to='/signup' className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-orange-600 hover:bg-purple-500 focus:shadow-outline focus:outline-none">
-                                      Sign Up
+                                        Sign Up
                                     </Link>
                                 </li>
                             </>
@@ -115,7 +119,7 @@ const Header = () => {
                                         <Link to='/' className="inline-flex items-center mr-8">
                                             <img className='h-10' src={logo} alt="" />
                                             <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 ">
-                                               Happy Toast
+                                                Happy Toast
                                             </span>
                                         </Link>
                                     </div>
@@ -139,7 +143,7 @@ const Header = () => {
                                     <ul className="space-y-4">
                                         <li>
                                             <Link to='/services' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
-                                               Services
+                                                Services
                                             </Link>
                                         </li>
                                         <li>
@@ -164,7 +168,7 @@ const Header = () => {
                                         </li>
                                         <li>
                                             <Link to='/signup' className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-orange-600 hover:bg-purple-600 focus:shadow-outline focus:outline-none">
-                                               Sign Up
+                                                Sign Up
                                             </Link>
                                         </li>
                                     </ul>
