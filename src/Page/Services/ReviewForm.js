@@ -3,8 +3,10 @@ import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import UseTitle from '../../hooks/UseTitle';
 
 const ReviewForm = () => {
+    UseTitle('Review form')
     const service = useLoaderData()
     // console.log(service)
     const{image, title, _id,} = service

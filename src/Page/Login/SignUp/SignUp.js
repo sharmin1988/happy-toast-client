@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import UseTitle from '../../../hooks/UseTitle';
 
 const SignUp = () => {
-
+    UseTitle('SignUp')
     const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const handelSignUp = (event) => {
