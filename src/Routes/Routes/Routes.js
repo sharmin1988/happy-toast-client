@@ -3,6 +3,7 @@ import Main from "../../Layout/Main";
 import Home from "../../Page/Home/Home/Home";
 import Login from "../../Page/Login/Login/Login";
 import SignUp from "../../Page/Login/SignUp/SignUp";
+import Blog from "../../Page/Other/Blog/Blog";
 import ErrorPage from "../../Page/Other/Error/ErrorPage";
 import ReviewForm from "../../Page/Services/ReviewForm";
 import ServiceDetails from "../../Page/Services/ServiceDetails";
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: <Services></Services>
+                element: <Blog></Blog>
             },
         ]
     },
