@@ -4,10 +4,12 @@ import Home from "../../Page/Home/Home/Home";
 import Login from "../../Page/Login/Login/Login";
 import SignUp from "../../Page/Login/SignUp/SignUp";
 import ErrorPage from "../../Page/Other/Error/ErrorPage";
+import ReviewForm from "../../Page/Services/ReviewForm";
 import ServiceDetails from "../../Page/Services/ServiceDetails";
 import Services from "../../Page/Services/Services";
 import AddServices from "../../Page/Shared/AddService/AddServices";
 import MyReviews from "../../Page/Shared/MyReviews/MyReviews";
+import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -37,12 +39,17 @@ const router = createBrowserRouter([
                 element: <ServiceDetails></ServiceDetails>
             },
             {
+                path: '/addReview/:id',
+                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),
+                element: <PrivateRoutes><ReviewForm></ReviewForm></PrivateRoutes>
+            },
+            {
                 path: '/myReviews',
-                element: <MyReviews></MyReviews>
+                element: <PrivateRoutes><MyReviews></MyReviews></PrivateRoutes>
             },
             {
                 path: '/addService',
-                element: <AddServices></AddServices>
+                element: <PrivateRoutes><AddServices></AddServices></PrivateRoutes>
             },
             {
                 path: '/blog',

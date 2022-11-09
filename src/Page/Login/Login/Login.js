@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 
@@ -8,6 +8,9 @@ const Login = () => {
 
     const { signIn, googleSignIn, } = useContext(AuthContext)
     const provider = new GoogleAuthProvider()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || "/";
+    const navigate = useNavigate()
 
     const handelLogin = (event) => {
         event.preventDefault()
@@ -21,6 +24,7 @@ const Login = () => {
                 const user = result.user
                 console.log(user)
                 form.reset()
+                navigate(from, { replace: true })
             })
             .catch(err => console.error(err))
     }

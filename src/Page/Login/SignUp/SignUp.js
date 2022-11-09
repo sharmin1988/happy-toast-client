@@ -4,23 +4,36 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
 
-    const { createUser, } = useContext(AuthContext)
+    const { createUser, updateUserProfile } = useContext(AuthContext)
 
     const handelSignUp = (event) => {
         event.preventDefault()
         const form = event.target;
         const email = form.email.value;
         const name = form.name.value;
+        const photoURL = form.photoURL.value;
         const password = form.password.value;
         // console.log(email, password)
 
         createUser(email, password)
             .then(result => {
                 const user = result.user
+                handelUpdateUserProfile(name, photoURL)
                 console.log(user)
+
                 form.reset()
             })
             .catch(err => console.error(err))
+    }
+
+    const handelUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch(error => { })
     }
 
     return (
@@ -40,7 +53,12 @@ const SignUp = () => {
 
                         <div className="my-3">
                             <label className="block text-md mb-2" >Name</label>
-                            <input className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="text" name="name" placeholder="name" />
+                            <input className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="text" name="name" placeholder="name" required />
+                        </div>
+
+                        <div className="my-3">
+                            <label className="block text-md mb-2" >Photo-Url</label>
+                            <input className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="text" name="photoURL" placeholder="photoURL" required />
                         </div>
 
                         <div className="my-3">
@@ -61,11 +79,11 @@ const SignUp = () => {
                             <span className="text-sm text-blue-700 hover:underline cursor-pointer">Forgot password?</span>
                         </div> */}
                         <div className="">
-                            
-                                <button className="mt-4 mb-3 w-full font-semibold  bg-orange-700 hover:bg-purple-500 text-white py-2 rounded-md transition duration-100">
-                                    Sign Up
-                                </button>
-                           
+
+                            <button className="mt-4 mb-3 w-full font-semibold  bg-orange-700 hover:bg-purple-500 text-white py-2 rounded-md transition duration-100">
+                                Sign Up
+                            </button>
+
                             {/* <div className="flex  space-x-2 font-semibold justify-center items-end bg-gray-600 hover:bg-gray-800 text-white py-2 rounded-md transition duration-100">
 
                                 <img className="" src='' alt="" />
