@@ -12,7 +12,7 @@ const MyReviews = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/userReviews?email=${user?.email}`, {
             headers: {
-                authorization:`Bearer ${localStorage.getItem('happy-token')}`
+                authorization: `Bearer ${localStorage.getItem('happy-token')}`
             }
         })
             .then(res => res.json())
@@ -43,25 +43,28 @@ const MyReviews = () => {
         }
     }
 
-    // const handelUpdate = (id, message) => {
-    //     fetch(`http://localhost:5000/reviews/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify({status:'happyly!! Updated'})
-    //     })
-    //     .then(res => res.json())
-    //             .then(data => {
-    //                 console.log(data)
-    //                 // if (data.deletedCount) {
-    //                 //     toast.success('Successfully DELETED!!')
-    //                 //     const remaining = reviews.filter(ord => ord._id !== id)
-    //                 //     setReviews(remaining)
-    //                 // }
+    const handelUpdate = (id) => {
+        fetch(`http://localhost:5000/reviews/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'happyly!! Updated' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    const remaining = reviews.filter(rev => rev._id !== id);
+                    const approving = reviews.find(rev => rev._id === id);
+                    approving.status = 'Happy to update ... yay!!'
+                    console.log(approving)
 
-    //             })
-    // }
+                    const newReview = [approving, ...remaining];
+                    setReviews(newReview);
+                }
+            })
+    }
 
 
     return (
@@ -73,16 +76,16 @@ const MyReviews = () => {
             </div>
             {
                 reviews.length === 0 ?
-                <h1 className='text-2xl text-red-600 font-bold'>No reviews were added!!!!</h1>
+                    <h1 className='text-2xl text-red-600 font-bold'>No reviews were added!!!!</h1>
 
-                :
+                    :
                     <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-4'>
                         {
                             reviews.map(review => <MyReviewCard
                                 key={review._id}
                                 review={review}
                                 handelDelete={handelDelete}
-                                // handelUpdate = {handelUpdate}
+                                handelUpdate={handelUpdate}
                             ></MyReviewCard>)
                         }
                     </div>
