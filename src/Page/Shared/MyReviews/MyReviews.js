@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import MyReviewCard from './MyReviewCard';
 
@@ -10,10 +11,31 @@ const MyReviews = () => {
         fetch(`http://localhost:5000/reviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setReviews(data)
             })
     }, [user?.email])
+
+
+    const handelDelete = (id) => {
+        const proceed = window.confirm('Are you sure?')
+        if (proceed) {
+
+            fetch(`http://localhost:5000/reviews/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount) {
+                        toast.success('Successfully DELETED!!')
+                        const remaining = reviews.filter(ord => ord._id !== id)
+                        setReviews(remaining)
+                    }
+
+                })
+
+        }
+    }
 
 
     return (
@@ -23,14 +45,22 @@ const MyReviews = () => {
                 <h2>You can edit or remove your REVIEWS!!!</h2>
 
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-4'>
-                {
-                    reviews.map(review => <MyReviewCard
-                        key={review._id}
-                        review={review}
-                    ></MyReviewCard>)
-                }
-            </div>
+            {
+                reviews.length === 0 ?
+                <h1 className='text-2xl text-red-600 font-bold'>No reviews were added!!!!</h1>
+
+                :
+                    <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 my-4'>
+                        {
+                            reviews.map(review => <MyReviewCard
+                                key={review._id}
+                                review={review}
+                                handelDelete={handelDelete}
+                            ></MyReviewCard>)
+                        }
+                    </div>
+            }
+
 
 
         </div>

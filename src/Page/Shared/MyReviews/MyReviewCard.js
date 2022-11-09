@@ -1,9 +1,10 @@
 import React from 'react';
 
-const MyReviewCard = ({ review }) => {
+const MyReviewCard = ({ review, handelDelete }) => {
+    console.log(review)
+    const { service, message, _id } = review
 
-    const { service, message } = review
-
+  
     return (
         <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden border border-orange-300 rounded-lg shadow-md ">
             <div>
@@ -13,10 +14,10 @@ const MyReviewCard = ({ review }) => {
             </div>
             <div className="flex justify-end">
                 <div className="flex space-x-2 text-sm">
-                    <button aria-label="Share this post" type="button" className="p-2 text-center text-white  bg-orange-600 rounded-md lg:w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
+                    <button type="button" className="p-2 text-center text-white  bg-orange-600 rounded-md lg:w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
                         Edit
                     </button>
-                    <button type="button" className="flex items-center p-1 space-x-1.5  text-white  bg-orange-600 rounded-md lg:w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
+                    <button onClick={() => handelDelete(_id)} type="button" className="flex items-center p-1 space-x-1.5  text-white  bg-orange-600 rounded-md lg:w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
                         DELETE
                     </button>
                 </div>

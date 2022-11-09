@@ -1,4 +1,4 @@
-import { FaStar, FaUser } from "react-icons/fa";
+import { FaStar} from "react-icons/fa";
 
 const ReviewCard = ({review}) => {
 
