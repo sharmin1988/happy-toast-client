@@ -10,16 +10,14 @@ const ServiceDetails = () => {
     const service = useLoaderData()
     const { title, image, _id, description, price } = service
 
-    console.log(_id)
     const { user } = useContext(AuthContext)
-
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
+                console.log(data)
                 setReviews(data)
 
             })

@@ -16,7 +16,7 @@ const ReviewForm = () => {
     const handelSubmit = event => {
         event.preventDefault()
         const form = event.target;
-        const message = form.message.value
+        const UserMessage = form.UserMessage.value
         const rating = form.rating.value
 
         const review = {
@@ -26,7 +26,7 @@ const ReviewForm = () => {
             customer: user?.displayName,
             email,
             photoURL,
-            message,
+            UserMessage,
             rating,
         }
         // console.log(review)
@@ -40,7 +40,7 @@ const ReviewForm = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 if (data.acknowledged) {
                     toast.success('Your review successfully added. Thank You!!!')
                     form.reset()
@@ -64,7 +64,7 @@ const ReviewForm = () => {
 
                     {/* review input fields */}
                     <div className="flex flex-col w-full">
-                        <input type="text" name='message' rows="3" placeholder="Type review..."
+                        <input type="text" name='UserMessage' rows="3" placeholder="Type review..."
                             className="p-4 focus:outline-none rounded-md resize-none " required></input>
 
                         <div className="grid gap-6 sm:grid-cols-2">

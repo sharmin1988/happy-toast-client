@@ -31,6 +31,7 @@ const AuthProvider = ({ children }) => {
 
 
     const logOut = () => {
+        localStorage.removeItem('happy-token')
         return signOut(auth)
     }
 

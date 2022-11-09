@@ -9,7 +9,7 @@ const Bannar = () => {
                     <div className="w-full lg:w-1/2">
                         <div className="lg:max-w-xl">
                             <p className="mb-2 text-orange-700 font-semibold">WellCome to "Happy Toast"!!!</p>
-                            <h1 className="text-2xl font-bold text-gray-800 uppercase lg:text-5xl">Best Place To Upgrade Your Cooking Skill !!</h1>
+                            <h1 className="text-2xl font-bold text-gray-800 uppercase lg:text-5xl">Best Place To Upgrade Your Taste Bud !!</h1>
 
                             <p className="mt-2 text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro beatae error laborum ab amet sunt recusandae? Reiciendis natus perspiciatis optio.</p>
 

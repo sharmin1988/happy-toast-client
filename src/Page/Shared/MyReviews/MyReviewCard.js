@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyReviewCard = ({ review, handelDelete }) => {
     console.log(review)
-    const { service, message, _id } = review
+    const { service, UserMessage, _id } = review
 
   
     return (
@@ -10,7 +10,7 @@ const MyReviewCard = ({ review, handelDelete }) => {
             <div>
                 {/* <img src="https://source.unsplash.com/random/100x100/?5" alt="" className="object-cover w-full mb-4 h-32 sm:h-96 dark:bg-gray-500" /> */}
                 <h2 className="mb-1 text-xl font-bold">{service}</h2>
-                <p className="text-sm text-gray-600">My Review: {message}</p>
+                <p className="text-sm text-gray-600">My Review: {UserMessage}</p>
             </div>
             <div className="flex justify-end">
                 <div className="flex space-x-2 text-sm">

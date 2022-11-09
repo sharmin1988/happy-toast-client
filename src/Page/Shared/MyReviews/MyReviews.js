@@ -10,7 +10,11 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/userReviews?email=${user?.email}`, {
+            headers: {
+                authorization:`Bearer ${localStorage.getItem('happy-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
@@ -27,7 +31,7 @@ const MyReviews = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     if (data.deletedCount) {
                         toast.success('Successfully DELETED!!')
                         const remaining = reviews.filter(ord => ord._id !== id)
@@ -38,6 +42,26 @@ const MyReviews = () => {
 
         }
     }
+
+    // const handelUpdate = (id, message) => {
+    //     fetch(`http://localhost:5000/reviews/${id}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify({status:'happyly!! Updated'})
+    //     })
+    //     .then(res => res.json())
+    //             .then(data => {
+    //                 console.log(data)
+    //                 // if (data.deletedCount) {
+    //                 //     toast.success('Successfully DELETED!!')
+    //                 //     const remaining = reviews.filter(ord => ord._id !== id)
+    //                 //     setReviews(remaining)
+    //                 // }
+
+    //             })
+    // }
 
 
     return (
@@ -58,6 +82,7 @@ const MyReviews = () => {
                                 key={review._id}
                                 review={review}
                                 handelDelete={handelDelete}
+                                // handelUpdate = {handelUpdate}
                             ></MyReviewCard>)
                         }
                     </div>
