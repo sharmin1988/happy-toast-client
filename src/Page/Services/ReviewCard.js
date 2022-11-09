@@ -2,7 +2,7 @@ import { FaStar} from "react-icons/fa";
 
 const ReviewCard = ({review}) => {
     console.log(review)
-    const {UserMessage, customer, email,rating, photoURL} = review
+    const {UserMessage, customer, email,rating, photoURL, status} = review
 
 
     return (
@@ -23,7 +23,7 @@ const ReviewCard = ({review}) => {
                 </div>
             </div>
             <div className="p-4 space-y-2 text-sm dark:text-gray-400">
-                <p>{UserMessage}</p>
+                <p>{status?status:UserMessage}</p>
 
             </div>
         </div>

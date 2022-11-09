@@ -49,7 +49,7 @@ const MyReviews = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({ status: 'happyly!! Updated' })
+            body: JSON.stringify({ status: 'happyly!! Updated.....yay!!' })
         })
             .then(res => res.json())
             .then(data => {
