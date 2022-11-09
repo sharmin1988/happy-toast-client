@@ -1,14 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
-import  { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import ReviewForm from './ReviewForm';
-import ReviewService from './ReviewService';
+import ReviewCard from './ReviewCard';
 
 
 const ServiceDetails = () => {
     const service = useLoaderData()
     const { title, image, _id, description, price } = service
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
+
+    const [reviews, setReviews] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setReviews(data)
+            })
+    }, [])
+
+
     return (
         <div className='container px-6 py-12 mx-auto lg:flex'>
             <div className="max-w-xl lg:w-1/2 overflow-hidden bg-white rounded shadow-xl ">
@@ -23,12 +36,20 @@ const ServiceDetails = () => {
             </div>
 
             <div className='max-w-xl lg:w-1/2'>
-                <ReviewService service= {service}></ReviewService>
+
+                <div>
+                    {
+                        reviews.map(review => <ReviewCard
+                            key={review._id}
+                            review= {review}
+                        ></ReviewCard>)
+                    }
+                </div>
                 <div>
                     {
                         user?.uid ?
                             <>
-                                <ReviewForm service= {service}></ReviewForm>
+                                <ReviewForm service={service}></ReviewForm>
                             </>
                             :
                             <div className='text-xl font-bold text-center'>
@@ -36,7 +57,7 @@ const ServiceDetails = () => {
                             </div>
                     }
                 </div>
-                
+
             </div>
         </div>
     );
