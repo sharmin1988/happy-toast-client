@@ -1,7 +1,25 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaStar } from "react-icons/fa";
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
-const ReviewService = () => {
+const ReviewService = ({service}) => {
+    console.log(service._id)
+    const {_id} = service
+
+    const {user} = useContext(AuthContext)
+    const [reviews, setReviews] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/reviews?serviceId=${service?_id:''}`)
+        .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                // setReviews(data)
+            })
+    }, [])
+
+
+
     return (
         <div className=" flex flex-col w-full max-w-lg p-4 mx-auto divide-y rounded-md divide-gray-700 ">
             <div className="flex justify-between p-4">

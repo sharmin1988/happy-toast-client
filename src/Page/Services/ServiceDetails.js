@@ -1,5 +1,6 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import  { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import ReviewForm from './ReviewForm';
 import ReviewService from './ReviewService';
 
@@ -7,6 +8,7 @@ import ReviewService from './ReviewService';
 const ServiceDetails = () => {
     const service = useLoaderData()
     const { title, image, _id, description, price } = service
+    const {user} = useContext(AuthContext)
     return (
         <div className='container px-6 py-12 mx-auto lg:flex'>
             <div className="max-w-xl lg:w-1/2 overflow-hidden bg-white rounded shadow-xl ">
@@ -21,10 +23,20 @@ const ServiceDetails = () => {
             </div>
 
             <div className='max-w-xl lg:w-1/2'>
-                <div >
-                    <ReviewService></ReviewService>
+                <ReviewService service= {service}></ReviewService>
+                <div>
+                    {
+                        user?.uid ?
+                            <>
+                                <ReviewForm service= {service}></ReviewForm>
+                            </>
+                            :
+                            <div className='text-xl font-bold text-center'>
+                                <p> Please <Link to='/login' className='text-purple-600 hover:text-orange-600'>Login</Link> to add your review.</p>
+                            </div>
+                    }
                 </div>
-                <ReviewForm></ReviewForm>
+                
             </div>
         </div>
     );

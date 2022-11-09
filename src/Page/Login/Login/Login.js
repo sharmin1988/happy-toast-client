@@ -62,17 +62,15 @@ const Login = () => {
                                 </div>
                             <span className="text-sm text-blue-700 hover:underline cursor-pointer">Forgot password?</span>
                         </div> */}
-                        <div className="">
+                        <div >
                             <button className="mt-4 mb-3 w-full font-semibold  bg-orange-700 hover:bg-purple-500 text-white py-2 rounded-md transition duration-100">
                                 Login now
                             </button>
-                            <div className="flex  space-x-2 font-semibold justify-center items-end bg-gray-600 hover:bg-gray-800 text-white py-2 rounded-md transition duration-100">
-
-                                <img className="" src='' alt="" />
-                                <button onClick={handelGoogleSignIn} >Or sign-in with google</button>
-                            </div>
                         </div>
                     </form>
+                    <div className="flex  space-x-2 font-semibold justify-center items-end bg-gray-600 hover:bg-gray-800 text-white py-2 rounded-md transition duration-100">
+                        <button onClick={handelGoogleSignIn} >Or sign-in with google</button>
+                    </div>
                 </div>
 
                 <p className='mt-4'> Don't have an account? <Link to='/signup'><span className='cursor-pointer text-sm text-blue-600'> Sign up</span></Link></p>
