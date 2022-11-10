@@ -8,7 +8,6 @@ import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = useContext(AuthContext)
-    // console.log(user)
 
     const handleLogOut = () => {
         logOut()
@@ -147,11 +146,7 @@ const Header = () => {
                                                 Blog
                                             </Link>
                                         </li>
-                                        <li>
-                                            <Link to='/about' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
-                                                About us
-                                            </Link>
-                                        </li>
+                                        
                                         <li>
                                             <Link to='/login' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
                                                 Login

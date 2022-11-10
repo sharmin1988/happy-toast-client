@@ -36,7 +36,6 @@ const ReviewForm = () => {
             rating,
         }
 
-console.log(review)
         fetch('https://happy-toast-server.vercel.app/reviews', {
             method: 'POST',
             headers: {

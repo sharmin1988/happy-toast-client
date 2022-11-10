@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MyReviewCard = ({ review, handelDelete, handelUpdate}) => {
-    // console.log(review)
     const { service, UserMessage, _id, serviceImg, status  } = review
 
   

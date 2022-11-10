@@ -1,5 +1,5 @@
 import { GoogleAuthProvider } from "firebase/auth";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { jwtAuthToken } from "../../../api/JwtToken";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
@@ -9,6 +9,7 @@ import UseTitle from "../../../hooks/UseTitle";
 const Login = () => {
     UseTitle('Login')
     const { signIn, googleSignIn, } = useContext(AuthContext)
+    const [error, setError] = useState('')
     const provider = new GoogleAuthProvider()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/";
@@ -19,12 +20,11 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        // console.log(email, password)
+        
 
         signIn(email, password)
             .then(result => {
                 const user = result.user
-                // console.log(user)
                 const currentUser = {
                     email: user.email
                 }
@@ -44,7 +44,10 @@ const Login = () => {
                     })
 
             })
-            .catch(err => console.error(err))
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
+            })
     }
 
     const handelGoogleSignIn = () => {
@@ -52,7 +55,7 @@ const Login = () => {
             .then((result) => {
                 const user = result.user
                 jwtAuthToken(user)
-             })
+            })
             .catch(err => console.error(err))
     }
 
@@ -80,13 +83,9 @@ const Login = () => {
                             <input className="px-4 w-full border-2 py-2 rounded-md text-sm outline-none" type="password" name="password" placeholder="password" />
                         </div>
 
-                        {/* <div className="flex justify-between">
-                            <div>
-                                    <input className="cursor-pointer" type="radio" name="rememberme" />
-                                    <span className="text-sm">Remember Me</span>
-                                </div>
-                            <span className="text-sm text-blue-700 hover:underline cursor-pointer">Forgot password?</span>
-                        </div> */}
+                        <div className="flex justify-between">
+                            <span className="text-xs mt-2 font-semibold text-red-700 ">{error}</span>
+                        </div>
                         <div >
                             <button className="mt-4 mb-3 w-full font-semibold  bg-orange-700 hover:bg-purple-500 text-white py-2 rounded-md transition duration-100">
                                 Login now
