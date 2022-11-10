@@ -42,11 +42,8 @@ const ReviewForm = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.acknowledged) {
                     toast.success('Your review successfully added. Thank You!!!')
-               
-
                     form.reset()
                 }
             })

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { jwtAuthToken } from '../../../api/JwtToken';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import UseTitle from '../../../hooks/UseTitle';
 
@@ -20,8 +21,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user
                 handelUpdateUserProfile(name, photoURL)
-                console.log(user)
-
+                jwtAuthToken(user)
                 form.reset()
             })
             .catch(err => console.error(err))

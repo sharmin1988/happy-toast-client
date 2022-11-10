@@ -2,7 +2,7 @@
 
 It's a Cloud-Kitchen service based projects.
 
-## Project live link: 
+## Project live link: https://happy-toast-client.web.app/
 
 ### `All the resources for my projects:`
 

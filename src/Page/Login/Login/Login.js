@@ -1,6 +1,7 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { jwtAuthToken } from "../../../api/JwtToken";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 import UseTitle from "../../../hooks/UseTitle";
 
@@ -48,7 +49,10 @@ const Login = () => {
 
     const handelGoogleSignIn = () => {
         googleSignIn(provider)
-            .then(() => { })
+            .then((result) => {
+                const user = result.user
+                jwtAuthToken(user)
+             })
             .catch(err => console.error(err))
     }
 

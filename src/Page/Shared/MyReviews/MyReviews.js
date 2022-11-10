@@ -53,12 +53,10 @@ const MyReviews = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 if (data.modifiedCount > 0) {
                     const remaining = reviews.filter(rev => rev._id !== id);
                     const approving = reviews.find(rev => rev._id === id);
                     approving.status = 'Happy to update ... yay!!'
-                    console.log(approving)
 
                     const newReview = [approving, ...remaining];
                     setReviews(newReview);

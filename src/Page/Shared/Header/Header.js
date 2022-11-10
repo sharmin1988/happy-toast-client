@@ -33,11 +33,6 @@ const Header = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to='/faq' className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-orange-500">
-                                FAQ
-                            </Link>
-                        </li>
-                        <li>
                             <Link to='/blog' className="font-medium tracking-wide text-white transition-colors duration-200 hover:text-orange-500">
                                 Blog
                             </Link>
@@ -146,11 +141,7 @@ const Header = () => {
                                                 Services
                                             </Link>
                                         </li>
-                                        <li>
-                                            <Link to='/faq' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
-                                                FAQ
-                                            </Link>
-                                        </li>
+                                        
                                         <li>
                                             <Link to='/blog' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
                                                 Blog
