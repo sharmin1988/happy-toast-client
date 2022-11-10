@@ -8,6 +8,7 @@ const MyReviews = () => {
     UseTitle('My Reviews')
     const { user } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch(`https://happy-toast-server.vercel.app/userReviews?email=${user?.email}`, {
@@ -18,6 +19,7 @@ const MyReviews = () => {
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
+                setLoading(false)
             })
     }, [user?.email])
 
@@ -64,6 +66,9 @@ const MyReviews = () => {
             })
     }
 
+    if (loading) {
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-800"></div>
+    }
 
     return (
         <div className="container  px-6 py-12 mx-auto">

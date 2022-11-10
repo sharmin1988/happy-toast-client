@@ -11,7 +11,6 @@ const ServiceDetails = () => {
     const service = useLoaderData()
     const { title, image, _id, description, price, } = service
     const { user } = useContext(AuthContext)
-
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
@@ -39,10 +38,17 @@ const ServiceDetails = () => {
 
                 <div>
                     {
-                        reviews.map(review => <ReviewCard
-                            key={review._id}
-                            review={review}
-                        ></ReviewCard>)
+                        reviews?.length === 0 ?
+                            <>
+                                <div className="w-16 h-16 border-4 border-dashed  rounded-full animate-spin border-violet-800">
+                                </div>
+                            </>
+                            : reviews && reviews
+                                .sort((a, b) => a.time > b.time ? -1 : 1)
+                                .map(review => <ReviewCard
+                                    key={review._id}
+                                    review={review}
+                                ></ReviewCard>)
                     }
                 </div>
                 <div>

@@ -18,15 +18,20 @@ const ServicesInHomePage = () => {
             <h2 className='text-3xl text-center font-bold mb-6'>My services</h2>
             <div className="flex flex-wrap mx-auto md:flex-nowrap w-3/4">
                 {
-                    services.map(service => <HomepageServiceCard
-                        key={service._id}
-                        service={service}
-                    ></HomepageServiceCard>)
+                    services?.length === 0 ?
+                        <>
+                            <div className="w-16 h-16 border-4 border-dashed  rounded-full animate-spin border-violet-800">
+                            </div>
+                        </>
+                        : services.map(service => <HomepageServiceCard
+                            key={service._id}
+                            service={service}
+                        ></HomepageServiceCard>)
                 }
                 <div className='ml-6 flex items-center'>
-                    <Link to = '/services' className='btn btn-link text-lg font-semibold'>
+                    <Link to='/services' className='btn btn-link text-lg font-semibold'>
                         <button >See All</button>
-                        </Link>
+                    </Link>
                 </div>
 
             </div>

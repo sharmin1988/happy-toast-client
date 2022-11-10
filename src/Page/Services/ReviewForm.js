@@ -10,10 +10,13 @@ const ReviewForm = () => {
 
     UseTitle('Review form')
     const service = useLoaderData()
-
     const { image, title, _id, } = service
     const { user } = useContext(AuthContext)
     const { displayName, email, photoURL } = user
+    const date = new Date();
+    const time = date.getHours() 
+        + ':' + date.getMinutes() 
+        + ":" + date.getSeconds();
 
     const handelSubmit = event => {
         event.preventDefault()
@@ -25,6 +28,7 @@ const ReviewForm = () => {
             serviceId: _id,
             service: title,
             serviceImg: image,
+            time,
             customer: user?.displayName,
             email,
             photoURL,
@@ -32,7 +36,7 @@ const ReviewForm = () => {
             rating,
         }
 
-
+console.log(review)
         fetch('https://happy-toast-server.vercel.app/reviews', {
             method: 'POST',
             headers: {

@@ -1,7 +1,7 @@
 import { FaStar} from "react-icons/fa";
 
 const ReviewCard = ({review}) => {
-    const {UserMessage, customer, email,rating, photoURL, status} = review
+    const {UserMessage, customer, email,rating, photoURL, time, status} = review
 
 
     return (
@@ -14,6 +14,7 @@ const ReviewCard = ({review}) => {
                     <div>
                         <h4 className="font-bold">{customer ? customer: 'N/A'}</h4>
                         <h4 className="text-sm text-gray-400 font-semibold">{email}</h4>
+                        <h4 className="text-xs text-gray-400 font-semibold">{time}</h4>
                     </div>
                 </div>
                 <div className="flex items-center space-x-2 dark:text-yellow-500">
