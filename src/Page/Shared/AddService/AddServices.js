@@ -20,7 +20,7 @@ const AddServices = () => {
             description
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://happy-toast-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

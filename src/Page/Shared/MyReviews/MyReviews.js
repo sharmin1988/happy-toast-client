@@ -10,7 +10,7 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userReviews?email=${user?.email}`, {
+        fetch(`https://happy-toast-server.vercel.app/userReviews?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('happy-token')}`
             }
@@ -26,7 +26,7 @@ const MyReviews = () => {
         const proceed = window.confirm('Are you sure?')
         if (proceed) {
 
-            fetch(`http://localhost:5000/reviews/${id}`, {
+            fetch(`https://happy-toast-server.vercel.app/reviews/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -44,7 +44,7 @@ const MyReviews = () => {
     }
 
     const handelUpdate = (id) => {
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://happy-toast-server.vercel.app/reviews/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

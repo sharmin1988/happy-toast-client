@@ -6,7 +6,7 @@ const ServicesInHomePage = () => {
     const [services, setServices] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/servicesHome')
+        fetch('https://happy-toast-server.vercel.app/servicesHome')
             .then(res => res.json())
             .then(data => {
                 setServices(data)

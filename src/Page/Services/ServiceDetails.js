@@ -15,7 +15,7 @@ const ServiceDetails = () => {
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myReviews?_id=${service?._id}`)
+        fetch(`https://happy-toast-server.vercel.app/myReviews?_id=${service?._id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
