@@ -6,23 +6,21 @@ import ReviewCard from './ReviewCard';
 
 
 const ServiceDetails = () => {
+
     UseTitle('Service-details')
     const service = useLoaderData()
-    const { title, image, _id, description, price } = service
-
+    const { title, image, _id, description, price, } = service
     const { user } = useContext(AuthContext)
+
     const [reviews, setReviews] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`http://localhost:5000/myReviews?_id=${service?._id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setReviews(data)
-
             })
-    }, [])
-
+    }, [service?._id])
 
     return (
         <div className='container px-6 py-12 mx-auto lg:flex'>
@@ -52,14 +50,14 @@ const ServiceDetails = () => {
                         user?.uid ?
                             <>
                                 <div className='w-1/2 mx-auto '>
-                                    <Link to = {`/addReview/${_id}`}>
+                                    <Link to={`/addReview/${_id}`}>
                                         <button className="tracking-wider w-full px-6 font-semibold py-2.5 mt-6 text-sm text-white  bg-orange-600 rounded-md  hover:bg-purple-500 focus:outline-none focus:bg-purple-500">ADD review</button>
                                     </Link>
                                 </div>
                             </>
                             :
                             <div className='text-xl font-bold text-center'>
-                                <p> Please <Link to = {`/addReview/${_id}`} className='text-purple-600 hover:text-orange-600'>Login</Link> to add your review.</p>
+                                <p> Please <Link to={`/addReview/${_id}`} className='text-purple-600 hover:text-orange-600'>Login</Link> to add your review.</p>
                             </div>
                     }
                 </div>

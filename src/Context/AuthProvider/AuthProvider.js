@@ -37,7 +37,6 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unauthorized = onAuthStateChanged(auth, currentUser => {
-            console.log(currentUser)
             setUser(currentUser)
             setLoading(false)
         })

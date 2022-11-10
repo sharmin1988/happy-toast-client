@@ -5,11 +5,13 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import UseTitle from '../../hooks/UseTitle';
 
+
 const ReviewForm = () => {
+
     UseTitle('Review form')
     const service = useLoaderData()
-    // console.log(service)
-    const{image, title, _id,} = service
+
+    const { image, title, _id, } = service
     const { user } = useContext(AuthContext)
     const { displayName, email, photoURL } = user
 
@@ -29,7 +31,7 @@ const ReviewForm = () => {
             UserMessage,
             rating,
         }
-        // console.log(review)
+
 
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
@@ -40,9 +42,11 @@ const ReviewForm = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
+                console.log(data)
                 if (data.acknowledged) {
                     toast.success('Your review successfully added. Thank You!!!')
+               
+
                     form.reset()
                 }
             })

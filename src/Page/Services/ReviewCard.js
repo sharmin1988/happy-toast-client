@@ -1,7 +1,6 @@
 import { FaStar} from "react-icons/fa";
 
 const ReviewCard = ({review}) => {
-    console.log(review)
     const {UserMessage, customer, email,rating, photoURL, status} = review
 
 
