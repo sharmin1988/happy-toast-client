@@ -5,7 +5,8 @@ It's a Cloud-Kitchen service based projects.
 
 ### `All the resources for my projects:`
 * api for services https://happy-toast-server.vercel.app/services
-* api for reviews using service id : https://happy-toast-server.vercel.app/myReviews?_id=636c21dc7c74cecaa9343878<br/>
+* api for reviews using service id : https://happy-toast-server.vercel.app/myReviews?_id=636c21dc7c74cecaa9343878
+
 * For my `basic work setup` , i install dependencies like...
 --- [tailwind](https://tailwindcss.com/)<br/>
 --- [firebase](https://firebase.google.com/)<br/>
@@ -14,7 +15,7 @@ It's a Cloud-Kitchen service based projects.
 * For design , toast, icon, install packages like... <br/>
  [daisyUI](https://daisyui.com/), [mambaUI](https://www.mambaui.com/), [kitwind](https://kitwind.io/), [react-icon](https://react-icons.github.io/react-icons/),[react-hot-toast](https://react-hot-toast.com/),[react-photoview](https://react-photo-view.vercel.app/en-US) <br/>
  
- For user `Authentication`, use.. 
+ #### For user `Authentication`, use.. 
 * google, and 
 * email-password verification.
 <br/>
