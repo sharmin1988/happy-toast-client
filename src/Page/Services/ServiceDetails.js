@@ -12,14 +12,20 @@ const ServiceDetails = () => {
     const { title, image, _id, description, price, } = service
     const { user } = useContext(AuthContext)
     const [reviews, setReviews] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         fetch(`https://happy-toast-server.vercel.app/myReviews?_id=${service?._id}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
+                setLoading(false)
             })
     }, [service?._id])
+
+    if (loading) {
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-800"></div>
+    }
 
     return (
         <div className='container px-6 py-12 mx-auto lg:flex'>
@@ -40,7 +46,7 @@ const ServiceDetails = () => {
                     {
                         reviews?.length === 0 ?
                             <>
-                                <div className="w-16 h-16 border-4 border-dashed  rounded-full animate-spin border-violet-800">
+                                <div className="text-xl text-center my-3 font-semibold text-red-600">No reviews are added!! ...yet!!
                                 </div>
                             </>
                             : reviews && reviews
