@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { jwtAuthToken } from '../../../api/JwtToken';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import UseTitle from '../../../hooks/UseTitle';
@@ -8,6 +8,7 @@ const SignUp = () => {
     UseTitle('SignUp')
     const { createUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState('')
+    const navigate = useNavigate()
 
     const handelSignUp = (event) => {
         event.preventDefault()
@@ -23,6 +24,7 @@ const SignUp = () => {
                 handelUpdateUserProfile(name, photoURL)
                 jwtAuthToken(user)
                 form.reset()
+                navigate('/')
             })
             .catch(error => {
                 console.error(error)

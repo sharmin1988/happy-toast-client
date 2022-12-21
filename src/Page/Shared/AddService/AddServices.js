@@ -63,8 +63,8 @@ const AddServices = () => {
                             className="p-4 mt-4 focus:outline-none rounded-md resize-none " required></input>
 
 
-                        <div className='w-1/2 mx-auto'>
-                            <button className=" tracking-wider px-6 font-semibold py-2.5 mt-6 text-sm text-white  bg-orange-700 rounded-md lg:w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
+                        <div className='w-full lg:w-1/2 mx-auto'>
+                            <button className=" tracking-wider px-6 font-semibold py-2.5 mt-6 text-sm text-white  bg-orange-700 rounded-md w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
                                 ADD product</button>
                         </div>
                         {/* <p className='mt-4'> Don't have an account? <Link to={`/services/${_id}`}><span className='cursor-pointer text-sm text-blue-600'> Sign up</span></Link></p> */}

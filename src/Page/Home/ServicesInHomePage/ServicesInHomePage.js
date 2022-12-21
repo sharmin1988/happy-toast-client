@@ -16,7 +16,7 @@ const ServicesInHomePage = () => {
     return (
         <section className="my-4 container px-6 py-10 mx-auto">
             <h2 className='text-3xl text-center font-bold mb-6'>My services</h2>
-            <div className="flex flex-wrap mx-auto md:flex-nowrap w-3/4">
+            <div className="flex flex-wrap mx-auto md:flex-nowrap w-full lg:w-3/4">
                 {
                     services?.length === 0 ?
                         <>

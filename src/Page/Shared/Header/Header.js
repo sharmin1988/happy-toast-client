@@ -147,16 +147,43 @@ const Header = () => {
                                             </Link>
                                         </li>
                                         
-                                        <li>
-                                            <Link to='/login' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
-                                                Login
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to='/signup' className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-orange-600 hover:bg-purple-600 focus:shadow-outline focus:outline-none">
-                                                Sign Up
-                                            </Link>
-                                        </li>
+                                        {
+                        user?.uid ?
+                            <>
+                                <li>
+                                    <Link to='/myReviews' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
+                                        My Reviews
+                                    </Link>
+                                </li>
+
+                                <li>
+                                    <Link to='/addService' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
+                                        Add Service
+                                    </Link>
+                                </li>
+
+                                <li>
+                                    <button>
+                                        <Link onClick={handleLogOut} to='/' className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-orange-600 hover:bg-purple-600 focus:shadow-outline focus:outline-none">
+                                            Logout
+                                        </Link>
+                                    </button>
+                                </li>
+                            </>
+
+                            : <>
+                                <li>
+                                    <Link to='/login' className="font-medium tracking-wide text-orange-700 transition-colors duration-200 hover:text-orange-500">
+                                        Login
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to='/signup' className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-orange-600 hover:bg-purple-500 focus:shadow-outline focus:outline-none">
+                                        Sign Up
+                                    </Link>
+                                </li>
+                            </>
+                    }
                                     </ul>
                                 </nav>
                             </div>

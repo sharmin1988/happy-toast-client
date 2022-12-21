@@ -6,7 +6,7 @@ const HomepageServiceCard = ({ service }) => {
     const {_id, title, description, image, price } = service
     return (
         <div>
-            <div className="flex w-full">
+            <div className="flex ">
                 <div className="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-white shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
                     <PhotoProvider>
                         <PhotoView src= {image}>

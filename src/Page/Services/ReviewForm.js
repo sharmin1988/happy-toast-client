@@ -69,7 +69,7 @@ const ReviewForm = () => {
                     {/* review input fields */}
                     <div className="flex flex-col w-full">
                         <input type="text" name='UserMessage' rows="3" placeholder="Type review..."
-                            className="p-4 focus:outline-none rounded-md resize-none " required></input>
+                            className="lg:p-4 p-2 focus:outline-none rounded-md resize-none " required></input>
 
                         <div className="grid gap-6 sm:grid-cols-2">
                             <div className="relative z-0">
@@ -81,8 +81,8 @@ const ReviewForm = () => {
                                 <input type="text" name="email" className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0" placeholder=" email" defaultValue={user.email} readOnly />
                             </div>
                         </div>
-                        <div className='w-1/2 mx-auto'>
-                            <button className=" tracking-wider px-6 font-semibold py-2.5 mt-6 text-sm text-white  bg-orange-700 rounded-md lg:w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
+                        <div className='w-full lg:w-1/2 mx-auto'>
+                            <button className=" tracking-wider px-6 font-semibold py-2.5 mt-6 text-sm text-white  bg-orange-700 rounded-md w-full hover:bg-purple-500 focus:outline-none focus:bg-purple-500">
                                 Submit Your review</button>
                         </div>
                         {/* <p className='mt-4'> Don't have an account? <Link to={`/services/${_id}`}><span className='cursor-pointer text-sm text-blue-600'> Sign up</span></Link></p> */}
