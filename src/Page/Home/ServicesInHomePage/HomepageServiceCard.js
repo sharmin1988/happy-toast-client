@@ -1,11 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const HomepageServiceCard = ({ service }) => {
     const {_id, title, description, image, price } = service
     return (
-        <div>
+        <div data-aos="fade-up"        
+        data-aos-duration="1500"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center">
             <div className="flex ">
                 <div className="relative flex flex-col items-start m-1 transition duration-300 ease-in-out delay-150 transform bg-white shadow-2xl rounded-xl md:w-80 md:-ml-16 md:hover:-translate-x-16 md:hover:-translate-y-8">
                     <PhotoProvider>
